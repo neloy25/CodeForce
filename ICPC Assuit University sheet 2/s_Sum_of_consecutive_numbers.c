@@ -1,5 +1,3 @@
-// https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/s
-
 #include<stdio.h>
 
 int main(){
