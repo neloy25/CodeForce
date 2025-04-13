@@ -1,9 +1,8 @@
 #include<stdio.h>
 
 int main(){
-    while(1){
-        int pass;
-        scanf("%d",&pass);
+    int pass;
+    while(scanf("%d",&pass) != EOF){
         if(pass == 1999){
             printf("Correct\n");
             break;
