@@ -2,6 +2,8 @@ input.txt
 output.txt
 output
 output/
+.cph
+.cph/
 
 # Prerequisites
 *.d
