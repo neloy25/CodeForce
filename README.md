@@ -22,3 +22,4 @@
 2. // https://codeforces.com/problemset/problem/2061/A
 3. // https://codeforces.com/problemset/problem/2070/A
 4. // https://codeforces.com/problemset/problem/2060/A
+5. // https://codeforces.com/problemset/problem/2044/A
