@@ -20,3 +20,4 @@
 ## Math
 1. // https://codeforces.com/problemset/problem/2090/A
 2. // https://codeforces.com/problemset/problem/2061/A
+3. // https://codeforces.com/problemset/problem/2070/A
