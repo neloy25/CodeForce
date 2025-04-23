@@ -26,3 +26,4 @@
 3. [A. FizzBuzz Remixed](https://codeforces.com/problemset/problem/2070/A)  
 4. [A. Fibonacciness](https://codeforces.com/problemset/problem/2060/A)  
 5. [A. Easy Problem](https://codeforces.com/problemset/problem/2044/A)
+6. [A. Olympiad Date](https://codeforces.com/contest/2091/problem/A)
