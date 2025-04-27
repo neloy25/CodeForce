@@ -39,5 +39,6 @@
 7. [A. Ideal Generator](https://codeforces.com/contest/2093/problem/A)
 
 
-## ➗ PROBLEMS: A SET
+## ➗ PROBLEMS: B SET
+
 1. [B. Seating in a Bus](https://codeforces.com/contest/2000/problem/B)
