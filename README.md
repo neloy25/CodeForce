@@ -2,20 +2,29 @@
 
 ## ICPC Assiut University
 
-### 📝 Sheet 1  
+### 📝 Sheet 1 (Condition) 
 - [Sheet 1 Problems](https://codeforces.com/group/MWSDmqGsZm/contest/219158)
 
 ### 🏁 Contest 1  
 - [Contest 1 Problems](https://codeforces.com/group/MWSDmqGsZm/contest/326175)
 
-### 📝 Sheet 2  
+### 📝 Sheet 2 (Loops) 
 - [Sheet 2 Problems](https://codeforces.com/group/MWSDmqGsZm/contest/219432)
 
 ### 🏁 Contest 2  
 - [Contest 2 Problems](https://codeforces.com/group/MWSDmqGsZm/contest/326907)
 
-### 📝 Sheet 3  
+### 📝 Sheet 3 (Array) 
 - [Sheet 3 Problems](https://codeforces.com/group/MWSDmqGsZm/contest/219774)
+
+### 🏁 Contest 3  
+- [Contest 3 Problems](https://codeforces.com/group/MWSDmqGsZm/contest/329103)
+
+### 📝 Sheet 4 (Strings)
+- [Sheet 4 Problems](https://codeforces.com/group/MWSDmqGsZm/contest/219856)
+
+### 📝 Sheet 5 
+- [Sheet 5 Problems](https://codeforces.com/group/MWSDmqGsZm/contest/223205)
 
 ---
 
