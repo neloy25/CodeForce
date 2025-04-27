@@ -28,3 +28,7 @@
 5. [A. Easy Problem](https://codeforces.com/problemset/problem/2044/A)
 6. [A. Olympiad Date](https://codeforces.com/contest/2091/problem/A)
 7. [A. Ideal Generator](https://codeforces.com/contest/2093/problem/A)
+
+
+## ➗ PROBLEMS: A SET
+1. [B. Seating in a Bus](https://codeforces.com/contest/2000/problem/B)
