@@ -4,9 +4,9 @@ int main() {
     int t;
     scanf("%d", &t);
     while (t--) {
-        int n;
-        scanf("%d", &n);
-        printf("%d\n", n);
+        long long int n;
+        scanf("%lld", &n);
+        printf("%lld\n",n);
     }
     return 0;
 }
