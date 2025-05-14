@@ -23,8 +23,11 @@
 ### 📝 Sheet 4 (Strings)
 - [Sheet 4 Problems](https://codeforces.com/group/MWSDmqGsZm/contest/219856)
 
-### 📝 Sheet 5 
+### 📝 Sheet 5 (Function)
 - [Sheet 5 Problems](https://codeforces.com/group/MWSDmqGsZm/contest/223205)
+
+### 📝 Sheet 7 (Recursion)
+- [Sheet 7 Problems](https://codeforces.com/group/MWSDmqGsZm/contest/223339)
 
 ---
 
@@ -39,7 +42,8 @@
 7. [A. Ideal Generator](https://codeforces.com/contest/2093/problem/A)
 8. [A - Submission is All You Need II](https://codeforces.com/gym/105846/problem/A)
 9. [A - Skibidus and Amog'u](https://codeforces.com/contest/2065/problem/A)
-
+10. [A - Watermelon](https://codeforces.com/contest/4/problem/A)
+11. [A - Team](https://codeforces.com/contest/231/problem/A)
 
 ## ➗ PROBLEMS: B SET
 
