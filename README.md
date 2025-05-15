@@ -33,19 +33,20 @@
 
 ## ➗ PROBLEMS: A SET
 
-1. [A. Treasure Hunt](https://codeforces.com/problemset/problem/2090/A)  
-2. [A. Kevin and Arithmetic](https://codeforces.com/problemset/problem/2061/A)  
-3. [A. FizzBuzz Remixed](https://codeforces.com/problemset/problem/2070/A)  
-4. [A. Fibonacciness](https://codeforces.com/problemset/problem/2060/A)  
-5. [A. Easy Problem](https://codeforces.com/problemset/problem/2044/A)
-6. [A. Olympiad Date](https://codeforces.com/contest/2091/problem/A)
-7. [A. Ideal Generator](https://codeforces.com/contest/2093/problem/A)
+1. [2090A - Treasure Hunt](https://codeforces.com/problemset/problem/2090/A)  
+2. [2061A - Kevin and Arithmetic](https://codeforces.com/problemset/problem/2061/A)  
+3. [2070A - FizzBuzz Remixed](https://codeforces.com/problemset/problem/2070/A)  
+4. [2060A - Fibonacciness](https://codeforces.com/problemset/problem/2060/A)  
+5. [2044A - Easy Problem](https://codeforces.com/problemset/problem/2044/A)
+6. [2091A - Olympiad Date](https://codeforces.com/contest/2091/problem/A)
+7. [2093A - Ideal Generator](https://codeforces.com/contest/2093/problem/A)
 8. [A - Submission is All You Need II](https://codeforces.com/gym/105846/problem/A)
-9. [A - Skibidus and Amog'u](https://codeforces.com/contest/2065/problem/A)
-10. [A - Watermelon](https://codeforces.com/contest/4/problem/A)
-11. [A - Team](https://codeforces.com/contest/231/problem/A)
+9. [2065A - Skibidus and Amog'u](https://codeforces.com/contest/2065/problem/A)
+10. [4A - Watermelon](https://codeforces.com/contest/4/problem/A)
+11. [231A - Team](https://codeforces.com/contest/231/problem/A)
+11. [263A - Beautiful Matrix](https://codeforces.com/problemset/problem/263/A)
 
 ## ➗ PROBLEMS: B SET
 
-1. [B. Seating in a Bus](https://codeforces.com/contest/2000/problem/B)
-2. [B. Skibidus and Ohio](https://codeforces.com/contest/2065/problem/B)
+1. [2000B - Seating in a Bus](https://codeforces.com/contest/2000/problem/B)
+2. [2065B - Skibidus and Ohio](https://codeforces.com/contest/2065/problem/B)
