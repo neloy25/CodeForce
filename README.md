@@ -45,6 +45,7 @@
 10. [4A - Watermelon](https://codeforces.com/contest/4/problem/A)
 11. [231A - Team](https://codeforces.com/contest/231/problem/A)
 11. [263A - Beautiful Matrix](https://codeforces.com/problemset/problem/263/A)
+12. [1950A - Stair, Peak, or Neither?](https://codeforces.com/problemset/problem/1950/A)
 
 ## ➗ PROBLEMS: B SET
 
