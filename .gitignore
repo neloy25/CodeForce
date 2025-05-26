@@ -4,6 +4,8 @@ output
 output/
 .cph
 .cph/
+.vscode
+.vscode/
 
 # Prerequisites
 *.d
