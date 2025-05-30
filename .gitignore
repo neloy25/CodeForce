@@ -6,6 +6,8 @@ output/
 .cph/
 .vscode
 .vscode/
+.DS_Store
+.DS_Store/
 
 # Prerequisites
 *.d
