@@ -8,6 +8,7 @@ output/
 .vscode/
 .DS_Store
 .DS_Store/
+*.bin
 
 # Prerequisites
 *.d
