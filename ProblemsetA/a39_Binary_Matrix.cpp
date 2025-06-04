@@ -9,11 +9,9 @@ int main(){
         int r,c;
         cin >> r >> c;
         char ch[r][c];
-        // int one_count = 0;
         for(int  i = 0; i < r; i++){
             for (int j = 0; j < c; j++) {
                 cin >> ch[i][j];
-                // one_count+= (ch[i][j] - '0');
             }
         }
 
