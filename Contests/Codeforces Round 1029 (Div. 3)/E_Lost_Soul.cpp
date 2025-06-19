@@ -11,65 +11,54 @@ int main()
     while(t--){
         int n;
         cin >> n;
-        vector <int> arr1(n);
-        vector <int> arr2(n);
-        for (int i = 0; i < n; i++)
-        {
+        vector<int> arr1(n),arr2(n);
+        for(int i = 0; i < n; i++){
             cin >> arr1[i];
         }
-        for (int i = 0; i < n; i++)
-        {
+
+        for(int i = 0; i < n; i++){
             cin >> arr2[i];
         }
+        unordered_set<int> alter1,alter2;
+        int res = 0;
 
-        vector <int> feq1(n + 1,-1);
-        vector <int> feq2(n + 1,-1);
-        vector <int> first(n + 1,-1);
-
-        int mx = 0;
-        for (int i = 0; i < n; i++)
+        for (int i = n - 1; i >= 0; i--)
         {
-            if(feq1[arr1[i]] == -1 && feq2[arr1[i]] == -1){
-                first[arr1[i]] = i;
-            }
-            if(feq1[arr2[i]] == -1 && feq2[arr2[i]] == -1){
-                first[arr2[i]] = i;
-            }
-            feq1[arr1[i]] = i;
-            feq2[arr2[i]] = i;
-            if(arr1[i] == arr2[i]) mx = i + 1;
-            else if(i != n - 1){
-                if(arr1[i] == arr1[i + 1] || arr2[i] == arr2[i + 1]) mx = i + 1;
-            }
-        }
-        
-        // for (int i = 1; i <= n; i++)
-        // {
-        //     cout << feq1[i] << " ";
-        // }
-        
-        // cout << "\n";
-        // for (int i = 1; i <= n; i++)
-        // {
-        //     cout << feq2[i] << " ";
-        // }
-        // cout << "\n";
-        // for (int i = 1; i <= n; i++)
-        // {
-        //     cout << first[i] << " ";
-        // }
-        // cout << "\n";
-        
-        for (int i = 1; i <= n; i++)
-        {
-            if(feq1[i] == -1 || feq2[i] == -1) continue;
-            if(feq1[i] - first[i] < 2 && feq2[i] - first[i] < 2) continue;
-            mx = max(first[i] + 1,mx);
-        }
+            if(i % 2 == 1){
+                if(arr1[i] == arr2[i]) {
+                    res = i + 1;
+                    break;
+                }
+                if(alter1.count(arr2[i]) || alter2.count(arr1[i])) {
+                    res = i + 1;
+                    break;
+                }
+                if(i != n -1) alter1.insert(arr1[i + 1]);
+                if(i != n - 1)alter2.insert(arr2[i + 1]);
+                if(alter1.count(arr1[i]) || alter2.count(arr2[i])) {
+                    res = i + 1;
+                    break;
+                }
 
-        cout << mx << endl;
+            } else{
+                if(arr1[i] == arr2[i]) {
+                    res = i + 1;
+                    break;
+                }
+                if(alter1.count(arr1[i]) || alter2.count(arr2[i])) {
+                    res = i + 1;
+                    break;
+                }
+                if(i != n - 1) alter1.insert(arr2[i + 1]);
+                if(i != n - 1) alter2.insert(arr1[i + 1]);
+                if(alter1.count(arr2[i]) || alter2.count(arr1[i])) {
+                    res = i + 1;
+                    break;
+                }
+            } 
+        }
+        cout << res << endl;
     }
-
     return 0;
 
 }
