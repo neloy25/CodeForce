@@ -47,7 +47,7 @@
 11. [263A - Beautiful Matrix](https://codeforces.com/problemset/problem/263/A)
 12. [1950A - Stair, Peak, or Neither?](https://codeforces.com/problemset/problem/1950/A)
 
-## ➗ PROBLEMS: B SET
+## ➗ PROBLEM Set B
 
 1. [2000B - Seating in a Bus](https://codeforces.com/contest/2000/problem/B)
 2. [2065B - Skibidus and Ohio](https://codeforces.com/contest/2065/problem/B)
