@@ -1,48 +1,36 @@
-#include <iostream>
-#include <cstdlib>
-#include <cstring>
-#include <cstdio>
-#include <vector>
-#include <set>
-#include <map>
+#include<bits/stdc++.h>
 using namespace std;
 
-#define forint(i, a, b) for(int i=(int)(a); i<=(int)(b); ++i)
-#define forintdown(i, a, b) for(int i=(int)(a); i>=(int)(b); --i)
-#define forn(i, n) forint(i, 0, (n)-1)
-#define forndown(i, n) forintdown(i, (n)-1, 0)
-#define fillchar(a, x) memset(a, x, sizeof(a))
-typedef long long LL;
-typedef pair<int,int> PII;
-typedef vector<int> VI;
-typedef vector<LL> VL;
-typedef vector<PII> VPI;
-#define MP make_pair
-#define PB push_back
-#define fi first
-#define se second
+typedef long long ll;
+#define MOD 1000000007
 
-const int MOD=int(1e9)+7;
-const int MAXN=2020;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int n,k;
+    cin >> n >> k;
 
-int f[MAXN][MAXN];
-int n, k;
+    vector<vector<ll>> dp(k + 1, vector<ll>(n + 1, 0));
 
-void add(int &x, int y) {
-	x+=y;
-	if(x>=MOD) x-=MOD;
-}
+    for(int i = 0; i <= n;i++) dp[1][i] = 1;
+    
+    for(int len = 2; len <= k;len++) {
+        for(int d = 1; d <= n;d++) {
+            for(int mul = d; mul <= n;mul+=d) {
+                dp[len][mul] += dp[len - 1][d];
+                if(dp[len][mul] >= MOD) dp[len][mul]-=MOD;
+            }
+        }
+    }
 
-int main() {
-	cin>>n>>k;
-	fillchar(f, 0);
-	forint(i, 1, n) f[1][i]=1;
-	forint(i, 1, k-1) forint(j, 1, n) if(f[i][j]!=0)
-		for(int j2=j; j2<=n; j2+=j)
-			add(f[i+1][j2], f[i][j]);
-	int ans=0;
-	forint(j, 1, n) add(ans, f[k][j]);
-	ans=(ans%MOD+MOD)%MOD;
-	cout<<ans<<endl;
-	return 0;
+    ll ans = 0;
+    for(int i = 1; i<= n; i++) {
+        ans+= dp[k][i];
+        if(ans >= MOD) ans-=MOD;
+    }
+
+    cout << ans << endl;
+    return 0;
 }
