@@ -1,0 +1,487 @@
+{
+    // ============================================
+    // TEMPLATES / BOILERPLATE
+    // ============================================
+    // prefix: cpp — bare bones main() with no fast I/O
+    "MAIN": {
+        "prefix": "cpp",
+        "body": [
+            "#include<bits/stdc++.h>",
+            "using namespace std;",
+            "",
+            "int main() {",
+            "    ${0}",
+            "",
+            "    return 0;",
+            "}"
+        ],
+        "description": "Basic main() template"
+    },
+    // prefix: cpmain — main() with fast I/O and ll/nl macros
+    "CPMAIN": {
+        "prefix": "cpmain",
+        "body": [
+            "#include<bits/stdc++.h>",
+            "using namespace std;",
+            "",
+            "#define ll long long",
+            "#define nl << '\\n'",
+            "",
+            "int main() {",
+            "    ios_base::sync_with_stdio(false);",
+            "    cin.tie(NULL);",
+            "",
+            "    ${0}",
+            "",
+            "    return 0;",
+            "}"
+        ],
+        "description": "Competitive programming main() with fast I/O"
+    },
+    // prefix: test — multi-test-case template with solve() and while(t--)
+    "CPTEST": {
+        "prefix": "test",
+        "body": [
+            "#include<bits/stdc++.h>",
+            "using namespace std;",
+            "",
+            "#define ll long long",
+            "#define nl << '\\n'",
+            "",
+            "void solve() {",
+            "    ${0}",
+            "}",
+            "int main() {",
+            "    ios_base::sync_with_stdio(false);",
+            "    cin.tie(NULL);",
+            "",
+            "    int t;",
+            "    cin >> t;",
+            "    while(t--) solve();",
+            "",
+            "    return 0;",
+            "}"
+        ],
+        "description": "Multi-test-case template (reads t, loops solve())"
+    },
+    
+    // ============================================
+    // GRID / GRAPH TEMPLATES
+    // ============================================
+    // prefix: grid — 2D grid template with bounds check and 4-directional moves
+    "Grid": {
+        "prefix": "grid",
+        "body": [
+            "#include<bits/stdc++.h>",
+            "using namespace std;",
+            "",
+            "#define ll long long",
+            "#define nl << '\\n'",
+            "const ll maxN = 1007;",
+            "",
+            "int n, m;",
+            "ll grid[maxN][maxN];",
+            "bool vis[maxN][maxN];",
+            "vector<pair<int,int>> dxy = {{1,0}, {-1,0}, {0, 1}, {0, -1}};",
+            "",
+            "bool isVald(int i, int j) {",
+            "    return (i >= 0 && i < n && j >= 0 && j < m);",
+            "}",
+            "",
+            "void solve() {",
+            "    ${0}",
+            "}",
+            "",
+            "int main() {",
+            "    ios_base::sync_with_stdio(false);",
+            "    cin.tie(NULL);",
+            "",
+            "    int t;",
+            "    cin >> t;",
+            "    while(t--) solve();",
+            "",
+            "    return 0;",
+            "}"
+        ],
+        "description": "2D grid template with bounds check + direction vectors"
+    },
+    // prefix: graph — adjacency-list template that reads a tree/graph (n-1 edges)
+    "Graph": {
+        "prefix": "graph",
+        "body": [
+            "#include<bits/stdc++.h>",
+            "using namespace std;",
+            "",
+            "#define ll long long",
+            "#define nl << '\\n'",
+            "const int maxN = 2 * 1e5 + 7;",
+            "vector<int> adj[maxN];",
+            "ll len[maxN];",
+            "bool vis[maxN];",
+            "",
+            "",
+            "void solve() {",
+            "    int n;",
+            "    cin >> n;",
+            "    for(int i = 0; i <= n; i++) {",
+            "        adj[i].clear();",
+            "        vis[i] = false;",
+            "        len[i] = 0;",
+            "    }",
+            "",
+            "    for(int i =1 ; i < n; i++) {",
+            "        int u, v;",
+            "        cin >> u >> v;",
+            "        adj[u].push_back(v);",
+            "        adj[v].push_back(u);",
+            "    }",
+            "    ",
+            "}",
+            "int main() {",
+            "    ios_base::sync_with_stdio(false);",
+            "    cin.tie(NULL);",
+            "",
+            "    int t;",
+            "    cin >> t;",
+            "    while(t--) solve();",
+            "",
+            "    return 0;",
+            "}"
+        ],
+        "description": "Adjacency-list graph/tree template (reads n-1 edges)"
+    },
+    // prefix: bfs — standard BFS starting from a root node
+    "BFS": {
+        "prefix": "bfs",
+        "body": [
+            "void bfs(int root) {",
+            "    queue<int> q;",
+            "    q.push(root);",
+            "    vis[root] = true;",
+            "",
+            "    while(!q.empty()) {",
+            "        int par = q.front();",
+            "        q.pop();",
+            "",
+            "        for(int child : adj[par]) {",
+            "            if(!vis[child]) {",
+            "                q.push(child);",
+            "                vis[child] = true;",
+            "            }",
+            "        }",
+            "    }",
+            "}"
+        ],
+        "description": "Standard BFS from a root node"
+    },
+    // prefix: dfs — standard recursive DFS
+    "DFS": {
+        "prefix": "dfs",
+        "body": [
+            "void dfs(int node) {",
+            "    vis[node] = true;",
+            "",
+            "    for(int child : adj[node]) {",
+            "        if(!vis[child]) {",
+            "            dfs(child);",
+            "        }",
+            "    }",
+            "}"
+        ],
+        "description": "Standard recursive DFS"
+    },
+    // ============================================
+    // TREE Algorithms
+    // ============================================
+    // Diameter of a tree
+    "Diameter of a tree": {
+        "prefix": "dia",
+        "body": [
+            "struct Diameter {",
+            "    int length;",
+            "    int u;",
+            "    int v;",
+            "};",
+            "",
+            "Diameter get_diameter() {",
+            "    if (n <= 1) return {0, 1, 1}; ",
+            "    vector<int> dist(n + 1, 0);",
+            "",
+            "    auto dfs = [&](auto& self, int node, int parent, int d) -> void {",
+            "        dist[node] = d;",
+            "        for (int child : adj[node]) {",
+            "            if (child != parent) {",
+            "                self(self, child, node, d + 1);",
+            "            }",
+            "        }",
+            "    };",
+            "",
+            "    dfs(dfs, 1, -1, 0);",
+            "    int u = 1;",
+            "    for (int i = 1; i <= n; i++) {",
+            "        if (dist[i] > dist[u]) u = i;",
+            "    }",
+            "",
+            "    dfs(dfs, u, -1, 0);",
+            "    int v = u;",
+            "    for (int i = 1; i <= n; i++) {",
+            "        if (dist[i] > dist[v]) v = i;",
+            "    }",
+            "",
+            "    return {dist[v], u, v};",
+            "}"
+        ],
+        "description": ""
+    },
+    // ============================================
+    // Data Structures
+    // ============================================
+
+    "Segment Tree Point Update": {
+        "prefix": "segpoint",
+        "body": [
+            "class SegmentTree {",
+            "private:",
+            "    vector<ll> tree;",
+            "    vector<ll> arr;",
+            "    int n;",
+            "",
+            "    // CHANGE THIS for different operations",
+            "    ll combine(ll a, ll b) {",
+            "        return a + b;",
+            "    }",
+            "",
+            "    // CHANGE THIS according to combine()",
+            "    ll identity() {",
+            "        return 0;",
+            "    }",
+            "",
+            "    void build(int idx, int l, int r) {",
+            "        if (l == r) {",
+            "            tree[idx] = arr[l];",
+            "            return;",
+            "        }",
+            "",
+            "        int mid = (l + r) / 2;",
+            "",
+            "        build(2 * idx + 1, l, mid);",
+            "        build(2 * idx + 2, mid + 1, r);",
+            "",
+            "        tree[idx] = combine(tree[2 * idx + 1], tree[2 * idx + 2]);",
+            "    }",
+            "",
+            "    ll query(int idx, int l, int r, int ql, int qr) {",
+            "        if (qr < l || r < ql)",
+            "            return identity();",
+            "",
+            "        if (ql <= l && r <= qr)",
+            "            return tree[idx];",
+            "",
+            "        int mid = (l + r) / 2;",
+            "",
+            "        ll left = query(2 * idx + 1, l, mid, ql, qr);",
+            "        ll right = query(2 * idx + 2, mid + 1, r, ql, qr);",
+            "",
+            "        return combine(left, right);",
+            "    }",
+            "",
+            "    void update(int idx, int l, int r, int pos, ll val) {",
+            "        if (l == r) {",
+            "            arr[l] = val;",
+            "            tree[idx] = val;",
+            "            return;",
+            "        }",
+            "",
+            "        int mid = (l + r) / 2;",
+            "",
+            "        if (pos <= mid)",
+            "            update(2 * idx + 1, l, mid, pos, val);",
+            "        else",
+            "            update(2 * idx + 2, mid + 1, r, pos, val);",
+            "",
+            "        tree[idx] = combine(tree[2 * idx + 1], tree[2 * idx + 2]);",
+            "    }",
+            "",
+            "public:",
+            "    SegmentTree(const vector<ll>& input) {",
+            "        arr = input;",
+            "        n = arr.size();",
+            "",
+            "        tree.resize(4 * n);",
+            "",
+            "        build(0, 0, n - 1);",
+            "    }",
+            "",
+            "    ll query(int l, int r) {",
+            "        return query(0, 0, n - 1, l, r);",
+            "    }",
+            "",
+            "    void update(int pos, ll val) {",
+            "        update(0, 0, n - 1, pos, val);",
+            "    }",
+            "};"
+        ],
+        "description": ""
+    },
+
+    // PBDS
+    "Policy Based Data Structure": {
+        "prefix": "pbds",
+        "body": [
+            "#include <ext/pb_ds/assoc_container.hpp>",
+            "#include <ext/pb_ds/tree_policy.hpp>",
+            "",
+            "using namespace __gnu_pbds;",
+            "",
+            "// Ordered Set",
+            "template <typename T>",
+            "using ordered_set = tree<",
+            "    T,",
+            "    null_type,",
+            "    less_equal<T>,",
+            "    rb_tree_tag,",
+            "    tree_order_statistics_node_update>;",
+            "// Usage:",
+            "// os.insert(x)        -> insert element",
+            "// os.erase(x)         -> erase element",
+            "// *os.find_by_order(k) -> k-th element (0-based)",
+            "// os.order_of_key(x)   -> # of elements < x"
+        ],
+        "description": ""
+    },
+    // ============================================
+    // I/O HELPERS
+    // ============================================
+    // prefix: vin — reads n, then a vector<ll> of size n
+    "Vector Input": {
+        "prefix": "vin",
+        "body": [
+            "ll n;",
+            "cin >> n;",
+            "vector<ll> v(n);",
+            "for(int i = 0; i < n; i++) {",
+            "    cin >> v[i];",
+            "}"
+        ],
+        "description": "Read n then a vector<ll> of size n"
+    },
+    // prefix: out — prints all elements of any container space-separated
+    "Print Any": {
+        "prefix": "out",
+        "body": [
+            "for(int val : ${1}) {",
+            "    cout << val << \" \";",
+            "}",
+            "cout nl;"
+        ],
+        "description": "Print all elements of a container"
+    },
+    // ============================================
+    // MACROS / TYPEDEFS
+    // ============================================
+    // prefix: yn — defines yes/no print macros
+    "YES NO": {
+        "prefix": "yn",
+        "body": [
+            "#define yes cout << \"YES\\n\"",
+            "#define no cout << \"NO\\n\""
+        ],
+        "description": "yes/no print macros"
+    },
+    // prefix: pii — pair<ll,ll> and vector<pair<ll,ll>> typedefs
+    "Pair": {
+        "prefix": "pii",
+        "body": [
+            "#define pii pair<ll,ll>",
+            "#define vpii vector<pii>"
+        ],
+        "description": "pair<ll,ll> / vector<pii> typedefs"
+    },
+    // ============================================
+    // MATH / BIT MANIPULATION
+    // ============================================
+    // prefix: bitonoff — check/turn on/turn off the k-th bit
+    "Binary Bits ON OFF": {
+        "prefix": "bitonoff",
+        "body": [
+            "ll kth_bit_on(ll n, ll k) {",
+            "    return ((n >> k) & 1);",
+            "}",
+            "",
+            "ll turn_on_kth_bit(ll n, ll k) {",
+            "    return (n | (1LL << k));",
+            "}",
+            "",
+            "ll turn_off_kth_bit(ll n, ll k) {",
+            "    return (n & (~(1LL << k)));",
+            "}"
+        ],
+        "description": "Check / set / clear the k-th bit"
+    },
+    // prefix: pwr — binary exponentiation (mod power), needs MOD defined
+    "Binary Exponentiation": {
+        "prefix": "pwr",
+        "body": [
+            "ll power(ll x, ll n) {",
+            "    ll ans = 1;",
+            "    while(n) {",
+            "        if(n & 1) {",
+            "            ans = (ans * x) % MOD;",
+            "        }",
+            "",
+            "        n >>= 1;",
+            "        x = (x * x) % MOD;",
+            "    }",
+            "    return ans;",
+            "}"
+        ],
+        "description": "Binary exponentiation (mod power) — requires MOD defined"
+    },
+    // Permutaion and Combination
+    "ncr": {
+        "prefix": "ncr",
+        "body": [
+            "const int MOD = 1e9 + 7;",
+            "const int N = 1e5 + 5;",
+            "",
+            "ll fact[N], inv_fact[N];",
+            "",
+            "ll bin_expo(ll a, ll b) {",
+            "    if(b == 0) return 1;",
+            "",
+            "    ll x = bin_expo(a, b / 2);",
+            "    x = (x * x) % MOD;",
+            "",
+            "    if(b & 1) x = (x * a) % MOD;",
+            "",
+            "    return x;",
+            "}",
+            "",
+            "void precompute() {",
+            "    fact[0] = 1;",
+            "",
+            "    for(int i = 1; i < N; i++) {",
+            "        fact[i] = fact[i - 1] * i % MOD;",
+            "    }",
+            "    inv_fact[N-1] = bin_expo(fact[N-1], MOD - 2);",
+            "",
+            "    for(int i = N-2; i >= 0; i--) {",
+            "        inv_fact[i] = inv_fact[i+1] * (i+1) % MOD;",
+            "    }",
+            "}",
+            "",
+            "ll ncr(int n, int r) {",
+            "    if(r > n) return 0;",
+            "",
+            "    return fact[n] * inv_fact[r] % MOD * inv_fact[n-r] % MOD;",
+            "}",
+            "",
+            "ll npr(int n, int r) {",
+            "    if(r > n) return 0;",
+            "",
+            "    return fact[n] * inv_fact[n-r] % MOD;",
+            "}"
+        ],
+        "description": ""
+    },
+}
